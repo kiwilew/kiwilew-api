@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<dubbo:application name="kiwiapi" />
+	<dubbo:protocol name="dubbo" port="-1" />
+
+	<dubbo:registry protocol="zookeeper" address="${dubbo.zookeeper.center}" file="kiwiapi.properties" />
+
+	<!-- demo -->
+	<!-- 
+	<dubbo:reference id="kiwiApiService" interface="org.kiwi.api.KiwiApiService" group="${dubbo.kiwiapi.group}" version="${dubbo.kiwiapi.version}" check="${dubbo.kiwiapi.check}"
+		timeout="${dubbo.kiwiapi.timeout}" retries="${dubbo.kiwiapi.retries}"></dubbo:reference>
+	 -->
+	
+
+</beans>
